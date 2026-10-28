@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sound Team Review Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section id="auth-screen" class="auth-screen">
+      <form id="auth-form" class="auth-card">
+        <div class="auth-brand">ST</div>
+        <p class="eyebrow">CHURCH AUDIO TEAM</p>
+        <h1>Welcome</h1>
+        <p id="auth-copy">Sign in to access your sound-team assessments.</p>
+        <div id="signup-details-wrap" class="hidden">
+          <div class="auth-section-heading"><strong>Your details</strong></div>
+            <div class="auth-field">
+              <div class="field-label-row"><label for="auth-first-name">First name</label><button class="field-help" type="button" data-field-help="first-name" aria-label="Help with first name">?</button></div>
+              <input id="auth-first-name" type="text" autocomplete="given-name" placeholder="First name" />
+            </div>
+            <div class="auth-field">
+              <div class="field-label-row"><label for="auth-middle-name">Middle name <span class="optional-label">(optional)</span></label><button class="field-help" type="button" data-field-help="middle-name" aria-label="Help with middle name">?</button></div>
+              <input id="auth-middle-name" type="text" autocomplete="additional-name" placeholder="Middle name" />
+            </div>
+            <div class="auth-field">
+              <div class="field-label-row"><label for="auth-last-name">Last name</label><button class="field-help" type="button" data-field-help="last-name" aria-label="Help with last name">?</button></div>
+              <input id="auth-last-name" type="text" autocomplete="family-name" placeholder="Last name" />
+            </div>
+          <div class="auth-field">
+            <div class="field-label-row"><label for="auth-phone">Phone number</label><button class="field-help" type="button" data-field-help="phone" aria-label="Help with phone number">?</button></div>
+            <input id="auth-phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. +234 801 234 5678" />
+          </div>
+        </div>
+        <div class="auth-field">
+          <div class="field-label-row"><label for="auth-email">Email address</label><button class="field-help" type="button" data-field-help="email" aria-label="Help with email address">?</button></div>
+          <input id="auth-email" type="email" autocomplete="email" placeholder="name@example.com" required />
+        </div>
+        <div class="auth-field">
+          <div class="field-label-row"><label for="auth-password">Password</label><button class="field-help" type="button" data-field-help="password" aria-label="Help with password">?</button></div>
+          <input id="auth-password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required />
+        </div>
+        <p id="auth-error" class="auth-error" role="alert"></p>
+        <button id="auth-submit" class="primary-button auth-submit" type="submit">Sign in</button>
+        <button id="auth-toggle" class="auth-toggle" type="button">New volunteer? Create an account</button>
+      </form>
+    </section>
+
+    <dialog id="registration-help" class="help-dialog" aria-labelledby="registration-help-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">REGISTRATION HELP</p>
+          <h2 id="registration-help-title">How to complete your details</h2>
+        </div>
+        <button id="registration-help-close" class="dialog-close" type="button" aria-label="Close help">×</button>
+      </div>
+      <div class="help-content">
+        <p><strong>First name</strong> — enter the name you are usually called by.</p>
+        <p><strong>Middle name</strong> — optional. Enter it only if it is part of your full legal or preferred name.</p>
+        <p><strong>Last name</strong> — enter your surname or family name.</p>
+        <p><strong>Phone number</strong> — enter a number the sound-team coordinator can use if they need to contact you about a shift.</p>
+        <p><strong>Email address</strong> — enter an address you can access. It will be used to identify your account.</p>
+        <p><strong>Password</strong> — choose at least six characters. Never share it with another volunteer.</p>
+      </div>
+      <button id="registration-help-done" class="primary-button" type="button">Got it</button>
+    </dialog>
+
+    <div class="app-shell hidden">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">CHURCH AUDIO TEAM</p>
+          <h1>Sound Team Review Board</h1>
+        </div>
+        <div class="topbar-actions">
+          <button class="secondary-button" id="logout-button">Sign out</button>
+          <button class="secondary-button" id="reset-data">Reset demo data</button>
+          <button class="primary-button" id="add-volunteer">+ Add volunteer</button>
+        </div>
+      </header>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-button active" data-target="overview">Overview</button>
+        <button class="nav-button" data-target="volunteers">Volunteers</button>
+        <button class="nav-button" data-target="exam">Skills exam</button>
+        <button class="nav-button" data-target="assessment">Assessment</button>
+        <button class="nav-button" data-target="training">Training</button>
+      </nav>
+
+      <main class="content">
+        <section id="overview" class="panel active-panel">
+          <div class="hero-card">
+            <div>
+              <p class="eyebrow muted">EVALUATOR VIEW</p>
+              <h2>Private review of sound ministry volunteers</h2>
+              <p>
+                Use this board to track practical sound-engineering readiness, score live operating skills,
+                and confirm who is ready for front-of-house, monitors, playback, or system support.
+              </p>
+            </div>
+            <div class="hero-badge">Reference<br />Soundcraft mix guide</div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-box purple">
+              <span class="stat-label">Volunteers</span>
+              <strong id="total-volunteers">0</strong>
+              <small>Active names on roster</small>
+            </article>
+            <article class="stat-box green">
+              <span class="stat-label">Ready to serve</span>
+              <strong id="ready-volunteers">0</strong>
+              <small>Score 80%+ or above</small>
+            </article>
+            <article class="stat-box orange">
+              <span class="stat-label">Average score</span>
+              <strong id="average-score">0%</strong>
+              <small>Across most recent exam</small>
+            </article>
+            <article class="stat-box blue">
+              <span class="stat-label">Needs coaching</span>
+              <strong id="needs-coaching">0</strong>
+              <small>Review soon with trainer</small>
+            </article>
+          </div>
+
+          <div class="two-column-grid">
+            <article class="panel-inner">
+              <div class="section-title-row">
+                <h3>Skill priorities</h3>
+              </div>
+              <div id="skill-priorities" class="skill-list"></div>
+            </article>
+
+            <article class="panel-inner">
+              <div class="section-title-row">
+                <h3>Recent reviews</h3>
+              </div>
+              <div id="recent-reviews" class="review-list"></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="volunteers" class="panel">
+          <div class="section-title-row">
+            <div>
+              <p class="eyebrow muted">ROSTER</p>
+              <h2>Volunteers</h2>
+            </div>
+          </div>
+          <div id="volunteer-list" class="volunteer-grid"></div>
+        </section>
+
+        <section id="exam" class="panel">
+          <div class="section-title-row">
+            <div>
+              <p class="eyebrow muted">SKILLS EXAM</p>
+              <h2>Sound engineering knowledge check</h2>
+            </div>
+            <div class="inline-controls">
+              <label for="exam-volunteer-select">Volunteer</label>
+              <select id="exam-volunteer-select" class="volunteer-select"></select>
+            </div>
+          </div>
+
+          <div id="quiz-container" class="quiz-container"></div>
+          <div class="panel-actions">
+            <button id="save-quiz" class="primary-button">Save exam</button>
+          </div>
+        </section>
+
+        <section id="assessment" class="panel">
+          <div class="section-title-row">
+            <div>
+              <p class="eyebrow muted">OBSERVED EVALUATION</p>
+              <h2>Practical assessment</h2>
+            </div>
+            <div class="inline-controls">
+              <label for="assessment-volunteer-select">Volunteer</label>
+              <select id="assessment-volunteer-select" class="volunteer-select"></select>
+            </div>
+          </div>
+
+          <div class="assessment-card">
+            <div id="assessment-header" class="assessment-header"></div>
+            <form id="assessment-form" class="rubric-form">
+              <div class="rubric-group">
+                <label for="gain-score">Gain staging <span id="gain-score-value">3/5</span></label>
+                <input id="gain-score" type="range" min="1" max="5" value="3" />
+              </div>
+              <div class="rubric-group">
+                <label for="eq-score">EQ and channel clarity <span id="eq-score-value">3/5</span></label>
+                <input id="eq-score" type="range" min="1" max="5" value="3" />
+              </div>
+              <div class="rubric-group">
+                <label for="dynamics-score">Dynamics and compression <span id="dynamics-score-value">3/5</span></label>
+                <input id="dynamics-score" type="range" min="1" max="5" value="3" />
+              </div>
+              <div class="rubric-group">
+                <label for="monitor-score">Monitor mix and cueing <span id="monitor-score-value">3/5</span></label>
+                <input id="monitor-score" type="range" min="1" max="5" value="3" />
+              </div>
+              <div class="rubric-group">
+                <label for="playback-score">Playback and recording setup <span id="playback-score-value">3/5</span></label>
+                <input id="playback-score" type="range" min="1" max="5" value="3" />
+              </div>
+              <div class="rubric-group">
+                <label for="troubleshooting-score">Troubleshooting and fault isolation <span id="troubleshooting-score-value">3/5</span></label>
+                <input id="troubleshooting-score" type="range" min="1" max="5" value="3" />
+              </div>
+              <div class="rubric-group">
+                <label for="communication-score">Communication and teamwork <span id="communication-score-value">3/5</span></label>
+                <input id="communication-score" type="range" min="1" max="5" value="3" />
+              </div>
+
+              <div class="notes-box">
+                <label for="assessment-notes">Evaluator notes</label>
+                <textarea id="assessment-notes" rows="5" placeholder="Write the strengths, concerns, and the next practical coaching step."></textarea>
+              </div>
+
+              <div class="panel-actions">
+                <button type="submit" class="primary-button">Save assessment</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section id="training" class="panel">
+          <div class="section-title-row">
+            <div>
+              <p class="eyebrow muted">PERSONAL TRAINING</p>
+              <h2>Recommended coaching plan</h2>
+            </div>
+          </div>
+          <div id="training-list" class="training-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
