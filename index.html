@@ -3,79 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sound Team Review Board</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <title>House on the Rock</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <section id="auth-screen" class="auth-screen">
-      <form id="auth-form" class="auth-card">
-        <div class="auth-brand">ST</div>
-        <p class="eyebrow">CHURCH AUDIO TEAM</p>
-        <h1>Welcome</h1>
-        <p id="auth-copy">Sign in to access your sound-team assessments.</p>
-        <div id="signup-details-wrap" class="hidden">
-          <div class="auth-section-heading"><strong>Your details</strong></div>
-            <div class="auth-field">
-              <div class="field-label-row"><label for="auth-first-name">First name</label><button class="field-help" type="button" data-field-help="first-name" aria-label="Help with first name">?</button></div>
-              <input id="auth-first-name" type="text" autocomplete="given-name" placeholder="First name" />
-            </div>
-            <div class="auth-field">
-              <div class="field-label-row"><label for="auth-middle-name">Middle name <span class="optional-label">(optional)</span></label><button class="field-help" type="button" data-field-help="middle-name" aria-label="Help with middle name">?</button></div>
-              <input id="auth-middle-name" type="text" autocomplete="additional-name" placeholder="Middle name" />
-            </div>
-            <div class="auth-field">
-              <div class="field-label-row"><label for="auth-last-name">Last name</label><button class="field-help" type="button" data-field-help="last-name" aria-label="Help with last name">?</button></div>
-              <input id="auth-last-name" type="text" autocomplete="family-name" placeholder="Last name" />
-            </div>
-          <div class="auth-field">
-            <div class="field-label-row"><label for="auth-phone">Phone number</label><button class="field-help" type="button" data-field-help="phone" aria-label="Help with phone number">?</button></div>
-            <input id="auth-phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. +234 801 234 5678" />
-          </div>
-        </div>
-        <div class="auth-field">
-          <div class="field-label-row"><label for="auth-email">Email address</label><button class="field-help" type="button" data-field-help="email" aria-label="Help with email address">?</button></div>
-          <input id="auth-email" type="email" autocomplete="email" placeholder="name@example.com" required />
-        </div>
-        <div class="auth-field">
-          <div class="field-label-row"><label for="auth-password">Password</label><button class="field-help" type="button" data-field-help="password" aria-label="Help with password">?</button></div>
-          <input id="auth-password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required />
-        </div>
-        <p id="auth-error" class="auth-error" role="alert"></p>
-        <button id="auth-submit" class="primary-button auth-submit" type="submit">Sign in</button>
-        <button id="auth-toggle" class="auth-toggle" type="button">New volunteer? Create an account</button>
-      </form>
-    </section>
-
-    <dialog id="registration-help" class="help-dialog" aria-labelledby="registration-help-title">
-      <div class="dialog-heading">
-        <div>
-          <p class="eyebrow">REGISTRATION HELP</p>
-          <h2 id="registration-help-title">How to complete your details</h2>
-        </div>
-        <button id="registration-help-close" class="dialog-close" type="button" aria-label="Close help">×</button>
-      </div>
-      <div class="help-content">
-        <p><strong>First name</strong> — enter the name you are usually called by.</p>
-        <p><strong>Middle name</strong> — optional. Enter it only if it is part of your full legal or preferred name.</p>
-        <p><strong>Last name</strong> — enter your surname or family name.</p>
-        <p><strong>Phone number</strong> — enter a number the sound-team coordinator can use if they need to contact you about a shift.</p>
-        <p><strong>Email address</strong> — enter an address you can access. It will be used to identify your account.</p>
-        <p><strong>Password</strong> — choose at least six characters. Never share it with another volunteer.</p>
-      </div>
-      <button id="registration-help-done" class="primary-button" type="button">Got it</button>
-    </dialog>
-
-    <div class="app-shell hidden">
+    <div class="app-shell">
       <header class="topbar">
         <div>
           <p class="eyebrow">CHURCH AUDIO TEAM</p>
-          <h1>Sound Team Review Board</h1>
+          <h1>House on the Rock</h1>
         </div>
         <div class="topbar-actions">
-          <button class="secondary-button" id="logout-button">Sign out</button>
           <button class="secondary-button" id="reset-data">Reset demo data</button>
           <button class="primary-button" id="add-volunteer">+ Add volunteer</button>
         </div>
@@ -100,7 +38,7 @@
                 and confirm who is ready for front-of-house, monitors, playback, or system support.
               </p>
             </div>
-            <div class="hero-badge">Reference<br />Soundcraft mix guide</div>
+            <div class="hero-badge">Private<br />Volunteer reviews</div>
           </div>
 
           <div class="stats-grid">
@@ -230,7 +168,7 @@
         <section id="training" class="panel">
           <div class="section-title-row">
             <div>
-              <p class="eyebrow muted">PERSONAL TRAINING</p>
+              <p class="eyebrow muted">PERSONALI TRAINING</p>
               <h2>Recommended coaching plan</h2>
             </div>
           </div>
